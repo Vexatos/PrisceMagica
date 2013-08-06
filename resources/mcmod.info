@@ -1,0 +1,17 @@
+[
+{
+  "modid": "PrisceMagica",
+  "name": "PrisceMagica",
+  "description": "Translates to \"Simply Magic\". A mod that adds spells, that's it.",
+  "version": "ANT:VERSION",
+  "mcversion": "1.6+",
+  "logoFile": "",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["Vazkii"],
+  "credits": "",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
