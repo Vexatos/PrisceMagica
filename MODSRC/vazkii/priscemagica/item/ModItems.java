@@ -11,8 +11,10 @@
 package vazkii.priscemagica.item;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import vazkii.priscemagica.lib.LibItemIDs;
 import vazkii.priscemagica.lib.LibNames;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public final class ModItems {
 
@@ -20,6 +22,12 @@ public final class ModItems {
 	
 	public static void initItems() {
 		magicGem = new ItemMod(LibItemIDs.idItemMagicGem).setUnlocalizedName(LibNames.ITEM_MAGIC_GEM);
+	
+		addRecipes();
+	}
+	
+	private static void addRecipes() {
+		GameRegistry.addShapelessRecipe(new ItemStack(magicGem), Item.diamond, Item.netherQuartz, new ItemStack(Item.dyePowder, 1, 4), Item.redstone, Item.glowstone);
 	}
 	
 }
