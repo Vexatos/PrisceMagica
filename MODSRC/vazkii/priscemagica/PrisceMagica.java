@@ -11,6 +11,7 @@
 package vazkii.priscemagica;
 
 import vazkii.priscemagica.core.handler.ConfigHandler;
+import vazkii.priscemagica.core.handler.LocalizationHandler;
 import vazkii.priscemagica.core.proxy.CommonProxy;
 import vazkii.priscemagica.item.ModItems;
 import vazkii.priscemagica.lib.LibMisc;
@@ -18,6 +19,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
@@ -37,5 +39,10 @@ public class PrisceMagica {
 		
 		ConfigHandler.loadConfig(event.getSuggestedConfigurationFile());
 		ModItems.initItems();
+	}
+	
+	@EventHandler
+	public void init(FMLInitializationEvent event) {
+		LocalizationHandler.loadLocalizations();
 	}
 }
