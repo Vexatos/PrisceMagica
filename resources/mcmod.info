@@ -2,7 +2,7 @@
 {
   "modid": "PrisceMagica",
   "name": "PrisceMagica",
-  "description": "Translates to \"Simply Magic\". A mod that adds spells, that's it.",
+  "description": "Translates to \"Simply Magic\". A mod that adds spells, that's it. Build ANT:BUILD",
   "version": "ANT:VERSION",
   "mcversion": "1.6+",
   "logoFile": "",
