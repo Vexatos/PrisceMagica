@@ -10,10 +10,16 @@
  */
 package vazkii.priscemagica.item;
 
+import net.minecraft.item.Item;
+import vazkii.priscemagica.lib.LibItemIDs;
+import vazkii.priscemagica.lib.LibNames;
+
 public final class ModItems {
 
+	public static Item magicGem;
+	
 	public static void initItems() {
-		
+		magicGem = new ItemMod(LibItemIDs.idItemMagicGem).setUnlocalizedName(LibNames.ITEM_MAGIC_GEM);
 	}
 	
 }

@@ -12,6 +12,7 @@ package vazkii.priscemagica;
 
 import vazkii.priscemagica.core.handler.ConfigHandler;
 import vazkii.priscemagica.core.proxy.CommonProxy;
+import vazkii.priscemagica.item.ModItems;
 import vazkii.priscemagica.lib.LibMisc;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -35,5 +36,6 @@ public class PrisceMagica {
 		instance = this;
 		
 		ConfigHandler.loadConfig(event.getSuggestedConfigurationFile());
+		ModItems.initItems();
 	}
 }

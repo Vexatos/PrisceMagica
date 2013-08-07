@@ -12,6 +12,9 @@ package vazkii.priscemagica.core.handler;
 
 import java.io.File;
 
+import vazkii.priscemagica.lib.LibItemIDs;
+import vazkii.priscemagica.lib.LibNames;
+
 import net.minecraftforge.common.Configuration;
 
 public final class ConfigHandler {
@@ -22,6 +25,11 @@ public final class ConfigHandler {
 		config = new Configuration(configFile);
 
 		config.load();
+		
+		LibItemIDs.idBlockSpellDesk = loadBlock(LibNames.BLOCK_SPELL_DESK, LibItemIDs.idBlockSpellDesk);
+		
+		LibItemIDs.idItemMagicGem = loadItem(LibNames.ITEM_MAGIC_GEM, LibItemIDs.idItemMagicGem);
+		LibItemIDs.idItemWand = loadItem(LibNames.ITEM_WAND, LibItemIDs.idItemWand);
 		
 		config.save();
 	}
