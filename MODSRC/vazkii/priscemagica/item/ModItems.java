@@ -19,15 +19,24 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public final class ModItems {
 
 	public static Item magicGem;
+	public static Item wand;
 	
 	public static void initItems() {
 		magicGem = new ItemMod(LibItemIDs.idItemMagicGem).setUnlocalizedName(LibNames.ITEM_MAGIC_GEM);
-	
+		wand = new ItemWand(LibItemIDs.idItemWand).setUnlocalizedName(LibNames.ITEM_WAND);
+		
 		addRecipes();
 	}
 	
 	private static void addRecipes() {
 		GameRegistry.addShapelessRecipe(new ItemStack(magicGem), Item.diamond, Item.netherQuartz, new ItemStack(Item.dyePowder, 1, 4), Item.redstone, Item.glowstone);
+		
+		GameRegistry.addRecipe(new ItemStack(wand),
+			" GM", " SG", "G  ",
+			'G', Item.goldNugget,
+			'M', magicGem,
+			'S', Item.stick
+		);
 	}
 	
 }
