@@ -10,6 +10,7 @@
  */
 package vazkii.priscemagica;
 
+import vazkii.priscemagica.core.handler.ConfigHandler;
 import vazkii.priscemagica.core.proxy.CommonProxy;
 import vazkii.priscemagica.lib.LibMisc;
 import cpw.mods.fml.common.Mod;
@@ -32,5 +33,7 @@ public class PrisceMagica {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		instance = this;
+		
+		ConfigHandler.loadConfig(event.getSuggestedConfigurationFile());
 	}
 }
