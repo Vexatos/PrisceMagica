@@ -46,7 +46,7 @@ public class ItemWand extends ItemMod {
 	            double z = par6 + 0.5 + zo;
 	            
 	            double xm = -(Math.random() - 0.5) / 0.25 - xo;
-	            double ym = -(Math.random()) * 0.5; 
+	            double ym = (Math.random()) * 0.5 - 0.75; 
 	            double zm = -(Math.random() - 0.5) / 0.25 - zo;
 
 	            par3World.spawnParticle("portal", x, y, z, xm, ym, zm);

@@ -30,6 +30,7 @@ public class BlockDesk extends BlockMod {
 		super(par1, Material.rock);
         setBlockBounds(0F, 0F, 0F, 1F, 0.75F, 1F);
         setLightOpacity(0);
+        setHardness(5.0F);
         setResistance(2000.0F);
         
         GameRegistry.registerBlock(this, LibNames.BLOCK_SPELL_DESK);
