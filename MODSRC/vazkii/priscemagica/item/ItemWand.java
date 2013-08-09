@@ -12,17 +12,17 @@ package vazkii.priscemagica.item;
 
 import java.util.Random;
 
-import vazkii.priscemagica.lib.LibResources;
-
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import vazkii.priscemagica.api.IWand;
+import vazkii.priscemagica.lib.LibResources;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemWand extends ItemMod {
+public class ItemWand extends ItemMod implements IWand {
 
 	public ItemWand(int par1) {
 		super(par1);
