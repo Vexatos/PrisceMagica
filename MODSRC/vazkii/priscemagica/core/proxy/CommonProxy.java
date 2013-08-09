@@ -10,8 +10,20 @@
  */
 package vazkii.priscemagica.core.proxy;
 
+import vazkii.priscemagica.item.TileEntityDesk;
+import vazkii.priscemagica.lib.LibMisc;
+import vazkii.priscemagica.lib.LibNames;
+import cpw.mods.fml.common.registry.GameRegistry;
+
 public class CommonProxy {
 
 	public void registerClientHandlers() { }
 	
+	public void registerTileEntities() {
+		GameRegistry.registerTileEntity(TileEntityDesk.class, tileName(LibNames.BLOCK_SPELL_DESK));
+	}
+	
+	private String tileName(String name) {
+		return LibMisc.MOD_ID + "_" + name;
+	}
 }

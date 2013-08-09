@@ -10,15 +10,15 @@
  */
 package vazkii.priscemagica.item;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import vazkii.priscemagica.client.core.helper.IconHelper;
-import vazkii.priscemagica.core.misc.ModCreativeTab;
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import vazkii.priscemagica.client.core.helper.IconHelper;
+import vazkii.priscemagica.core.misc.ModCreativeTab;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockMod extends Block {
+public abstract class BlockMod extends BlockContainer {
 
 	public BlockMod(int par1, Material par2Material) {
 		super(par1, par2Material);

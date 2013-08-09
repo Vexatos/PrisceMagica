@@ -12,12 +12,22 @@ package vazkii.priscemagica.core.proxy;
 
 import net.minecraftforge.common.MinecraftForge;
 import vazkii.priscemagica.client.code.handler.SoundHandler;
+import vazkii.priscemagica.client.render.tile.RenderTileDesk;
+import vazkii.priscemagica.item.TileEntityDesk;
+import cpw.mods.fml.client.registry.ClientRegistry;
 
 public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void registerClientHandlers() {
 		MinecraftForge.EVENT_BUS.register(new SoundHandler());
+	}
+	
+	@Override
+	public void registerTileEntities() {
+		super.registerTileEntities();
+		
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityDesk.class, new RenderTileDesk());
 	}
 	
 }

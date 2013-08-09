@@ -12,7 +12,9 @@ package vazkii.priscemagica.item;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
+import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import vazkii.priscemagica.client.core.helper.IconHelper;
 import vazkii.priscemagica.lib.LibNames;
@@ -45,6 +47,11 @@ public class BlockDesk extends BlockMod {
 	@SideOnly(Side.CLIENT)
 	public Icon getIcon(int par1, int par2) {
 		return par1 == ForgeDirection.DOWN.ordinal() ? down : par1 == ForgeDirection.UP.ordinal() ? top : side;
+	}
+
+	@Override
+	public TileEntity createNewTileEntity(World world) {
+		return new TileEntityDesk();
 	}
 
 }

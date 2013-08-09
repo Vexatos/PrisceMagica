@@ -46,5 +46,7 @@ public class PrisceMagica {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		LocalizationHandler.loadLocalizations();
+		
+		proxy.registerTileEntities();
 	}
 }
