@@ -39,6 +39,8 @@ public class PrisceMagica {
 		
 		ConfigHandler.loadConfig(event.getSuggestedConfigurationFile());
 		ModItems.initItems();
+		
+		proxy.registerClientHandlers();
 	}
 	
 	@EventHandler

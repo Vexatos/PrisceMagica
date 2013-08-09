@@ -12,6 +12,8 @@ package vazkii.priscemagica.item;
 
 import java.util.Random;
 
+import vazkii.priscemagica.lib.LibResources;
+
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
@@ -33,7 +35,7 @@ public class ItemWand extends ItemMod {
 		int id = par3World.getBlockId(par4, par5, par6);
 		if(id == Block.enchantmentTable.blockID) {
 			par3World.setBlock(par4, par5, par6, ModItems.desk.blockID);
-			//par3World.playSoundEffect(par4, par5, par6, "", 1F, 1F);
+			par3World.playSoundEffect(par4, par5, par6, LibResources.PSOUND_TABLE_TRANSFORM, 1F, 1F);
 			for(int i = 0; i < 360; i++) {
 				Random par5Random = par3World.rand;
 				double xo = Math.random() - 0.5;

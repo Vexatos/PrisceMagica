@@ -10,6 +10,14 @@
  */
 package vazkii.priscemagica.core.proxy;
 
+import net.minecraftforge.common.MinecraftForge;
+import vazkii.priscemagica.client.code.handler.SoundHandler;
+
 public class ClientProxy extends CommonProxy {
 
+	@Override
+	public void registerClientHandlers() {
+		MinecraftForge.EVENT_BUS.register(new SoundHandler());
+	}
+	
 }

@@ -12,11 +12,21 @@ package vazkii.priscemagica.lib;
 
 public final class LibResources {
 	
+	public static final String PREFIX_MOD = "priscemagica:";
+	
     public static final String PREFIX_LANG = "/assets/priscemagica/lang/";
 	
     public static final String[] LANGS = new String[] {
     	"en_US.lang", 
     	"pt_PT.lang"
     };
+    
+    public static final String SOUND_TABLE_TRANSFORM = "tableTransform";
+    public static final String PSOUND_TABLE_TRANSFORM = PREFIX_MOD + "tableTransform";
+
+    
+	public static final String[] SOUNDS = new String[] {
+		SOUND_TABLE_TRANSFORM
+	};
     
 }

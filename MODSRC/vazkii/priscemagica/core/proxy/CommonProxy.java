@@ -12,4 +12,6 @@ package vazkii.priscemagica.core.proxy;
 
 public class CommonProxy {
 
+	public void registerClientHandlers() { }
+	
 }
