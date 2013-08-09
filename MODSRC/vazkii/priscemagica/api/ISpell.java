@@ -10,9 +10,13 @@
  */
 package vazkii.priscemagica.api;
 
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Icon;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public interface ISpell {
 
@@ -29,4 +33,16 @@ public interface ISpell {
 	public boolean castOnBlock(EntityPlayer player, ItemStack wand, int x, int y, int z);
 
 	public boolean castOnEntity(EntityPlayer player, ItemStack wand, EntityLivingBase target);
+	
+	@SideOnly(Side.CLIENT)
+	public int getRequiredRenderPasses();
+	
+	@SideOnly(Side.CLIENT)
+	public Icon getIcon(int renderPass);
+	
+	@SideOnly(Side.CLIENT)
+	public int getColorForRenderPass(int renderPass);
+	
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister registry);
 }
