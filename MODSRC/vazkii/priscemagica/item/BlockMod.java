@@ -18,7 +18,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 
-public final class BlockMod extends Block {
+public class BlockMod extends Block {
 
 	public BlockMod(int par1, Material par2Material) {
 		super(par1, par2Material);

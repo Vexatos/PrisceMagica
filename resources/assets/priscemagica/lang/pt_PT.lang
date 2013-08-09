@@ -1,6 +1,6 @@
 item.magicGem.name=Joia do Feiticeiro
 item.wand.name=Varinha Magica
 
-block.spellDesk.name=Mesa de Feiticeiria
+tile.spellDesk.name=Mesa de Feiticeiria
 
 itemGroup.PrisceMagica=PrisceMagica

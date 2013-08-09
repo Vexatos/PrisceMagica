@@ -1,6 +1,6 @@
 item.magicGem.name=Gema Magica
 item.wand.name=Varinha Magica
 
-block.spellDesk.name=Mesa de Bruxaria
+tile.spellDesk.name=Mesa de Bruxaria
 
 itemGroup.PrisceMagica=PrisceMagica

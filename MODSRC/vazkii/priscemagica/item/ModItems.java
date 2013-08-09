@@ -10,6 +10,7 @@
  */
 package vazkii.priscemagica.item;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import vazkii.priscemagica.lib.LibItemIDs;
@@ -21,9 +22,13 @@ public final class ModItems {
 	public static Item magicGem;
 	public static Item wand;
 	
+	public static Block desk;
+	
 	public static void initItems() {
 		magicGem = new ItemMod(LibItemIDs.idItemMagicGem).setUnlocalizedName(LibNames.ITEM_MAGIC_GEM);
 		wand = new ItemWand(LibItemIDs.idItemWand).setUnlocalizedName(LibNames.ITEM_WAND);
+		
+		desk = new BlockDesk(LibItemIDs.idBlockSpellDesk).setUnlocalizedName(LibNames.BLOCK_SPELL_DESK);
 		
 		addRecipes();
 	}
