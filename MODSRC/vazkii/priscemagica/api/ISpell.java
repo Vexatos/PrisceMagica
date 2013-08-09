@@ -24,7 +24,7 @@ public interface ISpell {
 
 	public String getUnlocalizedName();
 
-	public boolean isAvailable(PlayerResearchData researchData);
+	public boolean isAvailable(PlayerData researchData);
 
 	public int getCooldown(ItemStack wand);
 
