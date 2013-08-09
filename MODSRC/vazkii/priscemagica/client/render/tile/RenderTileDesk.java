@@ -74,7 +74,7 @@ public class RenderTileDesk extends TileEntitySpecialRenderer {
 				"just wasted a",
 				"bunch of time, woo"
 		};
-		
+
 		for(int i = 0; i < text.length; i++) {
 			font.drawString(text[i], 0, 0, 0x555555);
 			GL11.glTranslatef(0F, 9F, 0F);
