@@ -12,10 +12,12 @@ package vazkii.priscemagica.item;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
+import vazkii.priscemagica.PrisceMagica;
 import vazkii.priscemagica.client.core.helper.IconHelper;
 import vazkii.priscemagica.lib.LibNames;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -34,6 +36,12 @@ public class BlockDesk extends BlockMod {
         setResistance(2000.0F);
         
         GameRegistry.registerBlock(this, LibNames.BLOCK_SPELL_DESK);
+	}
+	
+	@Override
+	public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9) {
+		par5EntityPlayer.openGui(PrisceMagica.instance, 0, par1World, par2, par3, par4);
+		return true;
 	}
 	
 	@Override

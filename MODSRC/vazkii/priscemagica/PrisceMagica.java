@@ -11,6 +11,7 @@
 package vazkii.priscemagica;
 
 import vazkii.priscemagica.core.handler.ConfigHandler;
+import vazkii.priscemagica.core.handler.GuiHandler;
 import vazkii.priscemagica.core.handler.LocalizationHandler;
 import vazkii.priscemagica.core.proxy.CommonProxy;
 import vazkii.priscemagica.item.ModItems;
@@ -22,6 +23,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 
 @Mod(modid = LibMisc.MOD_ID, name = LibMisc.MOD_NAME, version = LibMisc.VERSION)
 @NetworkMod(clientSideRequired = true, channels = { LibMisc.CHANNEL })
@@ -48,5 +50,6 @@ public class PrisceMagica {
 		LocalizationHandler.loadLocalizations();
 		
 		proxy.registerTileEntities();
+		NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
 	}
 }

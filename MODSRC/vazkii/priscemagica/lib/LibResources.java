@@ -15,6 +15,7 @@ public final class LibResources {
 	public static final String PREFIX_MOD = "priscemagica:";
 	
     public static final String PREFIX_LANG = "/assets/priscemagica/lang/";
+    public static final String PREFIX_GUI = PREFIX_MOD + "/textures/gui/attuner.png";
 	
     public static final String[] LANGS = new String[] {
     	"en_US.lang", 

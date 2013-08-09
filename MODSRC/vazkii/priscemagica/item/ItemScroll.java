@@ -6,16 +6,15 @@
  * Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License
  * (http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_GB)
  * 
- * File Created @ [7 Aug 2013, 21:44:09 (GMT)]
+ * File Created @ [9 Aug 2013, 16:23:37 (GMT)]
  */
-package vazkii.priscemagica.lib;
+package vazkii.priscemagica.item;
 
-public final class LibItemIDs {
+public class ItemScroll extends ItemMod {
 
-	public static int idItemMagicGem = 15650;
-	public static int idItemWand = 15651;
-	public static int idItemScroll = 15652;
-	
-	public static int idBlockSpellDesk = 1565;
-	
+	public ItemScroll(int par1) {
+		super(par1);
+		setMaxStackSize(1);
+	}
+
 }

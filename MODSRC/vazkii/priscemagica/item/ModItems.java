@@ -21,12 +21,14 @@ public final class ModItems {
 
 	public static Item magicGem;
 	public static Item wand;
+	public static Item scroll;
 	
 	public static Block desk;
 	
 	public static void initItems() {
 		magicGem = new ItemMod(LibItemIDs.idItemMagicGem).setUnlocalizedName(LibNames.ITEM_MAGIC_GEM);
 		wand = new ItemWand(LibItemIDs.idItemWand).setUnlocalizedName(LibNames.ITEM_WAND);
+		scroll = new ItemScroll(LibItemIDs.idItemScroll).setUnlocalizedName(LibNames.ITEM_SCROLL);
 		
 		desk = new BlockDesk(LibItemIDs.idBlockSpellDesk).setUnlocalizedName(LibNames.BLOCK_SPELL_DESK);
 		

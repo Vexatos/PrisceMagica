@@ -1,5 +1,6 @@
 item.magicGem.name=Sorcerous Gem
 item.wand.name=Wand
+item.scroll.name=Spell Scroll
 
 tile.spellDesk.name=Sorcery Table
 

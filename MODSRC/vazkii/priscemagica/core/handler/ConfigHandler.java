@@ -30,6 +30,7 @@ public final class ConfigHandler {
 		
 		LibItemIDs.idItemMagicGem = loadItem(LibNames.ITEM_MAGIC_GEM, LibItemIDs.idItemMagicGem);
 		LibItemIDs.idItemWand = loadItem(LibNames.ITEM_WAND, LibItemIDs.idItemWand);
+		LibItemIDs.idItemScroll = loadItem(LibNames.ITEM_SCROLL, LibItemIDs.idItemScroll);
 		
 		config.save();
 	}
