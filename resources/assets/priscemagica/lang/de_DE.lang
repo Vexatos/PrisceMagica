@@ -1,0 +1,13 @@
+item.magicGem.name=Magisches Juwel
+item.wand.name=Zauberstab
+item.scroll.name=Zauberschriftrolle
+
+tile.spellDesk.name=Magietisch
+
+spell.fireball.name=Feuerball
+spell.icebolt.name=Eisblitz
+
+spell.fireball.desc=Der Zauberer feuert ein schelles loderndes Projektil. Beim Treffen eines Gegners fügt es moderaten Schaden zu und entzündet den Gegner.
+spell.icebolt.desc=Der Zauberer feuert ein langsames kaltes Projektil. Beim Treffen eines Gegners friert es ihn ein, einen kurzen Zeitraum Bewegungen verhindernd.
+
+itemGroup.PrisceMagica=PrisceMagica
