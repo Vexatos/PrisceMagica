@@ -11,7 +11,9 @@
 package vazkii.priscemagica.spell;
 
 import net.minecraft.client.renderer.texture.IconRegister;
+import vazkii.priscemagica.PrisceMagica;
 import vazkii.priscemagica.api.AbstractSpell;
+import vazkii.priscemagica.api.PrisceMagicaAPI;
 import vazkii.priscemagica.client.core.helper.IconHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -20,6 +22,8 @@ public class SpellImpl extends AbstractSpell {
 
 	public SpellImpl(String unlocalizedName) {
 		super(unlocalizedName);
+		
+		PrisceMagicaAPI.registerSpell(this, unlocalizedName);
 	}
 
 	@Override

@@ -18,4 +18,6 @@ public final class LibNames {
 
 	public static final String BLOCK_SPELL_DESK = "spellDesk";
 
+	public static final String SPELL_FIREBALL = "fireball";
+	public static final String SPELL_ICEBOLT = "icebolt";
 }

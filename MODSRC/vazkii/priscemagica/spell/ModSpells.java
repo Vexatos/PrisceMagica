@@ -10,10 +10,19 @@
  */
 package vazkii.priscemagica.spell;
 
+import vazkii.priscemagica.api.ISpell;
+import vazkii.priscemagica.lib.LibNames;
+import vazkii.priscemagica.spell.offensive.SpellFireball;
+import vazkii.priscemagica.spell.offensive.SpellIcebolt;
+
 public final class ModSpells {
 
+	public static ISpell fireball;
+	public static ISpell icebolt;
+	
 	public static void registerSpells() {
-		
+		fireball = new SpellFireball(LibNames.SPELL_FIREBALL);
+		icebolt = new SpellIcebolt(LibNames.SPELL_ICEBOLT);
 	}
 	
 }
