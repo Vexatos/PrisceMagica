@@ -57,6 +57,16 @@ public class BlockDesk extends BlockMod {
 	public Icon getIcon(int par1, int par2) {
 		return par1 == ForgeDirection.DOWN.ordinal() ? down : par1 == ForgeDirection.UP.ordinal() ? top : side;
 	}
+	
+	@Override
+	public boolean isOpaqueCube() {
+		return false;
+	}
+	
+	@Override
+	public boolean renderAsNormalBlock() {
+		return false;
+	}
 
 	@Override
 	public TileEntity createNewTileEntity(World world) {
