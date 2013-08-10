@@ -27,7 +27,7 @@ public final class PrisceMagicaAPI {
 	/**
 	 * Registers a spell, along with the name of the spell to map with.
 	 */
-	public void registerSpell(ISpell spell, String name) {
+	public static void registerSpell(ISpell spell, String name) {
 		if(spells.containsKey(name))
 			throw new IllegalArgumentException("Name \"" + name + "\" is already taken by " + spells.get(name) + " when adding " + spell + "!");
 		
@@ -38,7 +38,7 @@ public final class PrisceMagicaAPI {
 	 * Gets a spell from mappings, given the name passed in. If no spell is found mapped
 	 * to this name, it returns null.
 	 */
-	public ISpell getSpell(String name) {
+	public static ISpell getSpell(String name) {
 		return spells.get(name);
 	}
 	
@@ -48,7 +48,7 @@ public final class PrisceMagicaAPI {
 	 * does not have an availability mapping, it returns DISABLED.
 	 * @see SpellAvailability
 	 */
-	public SpellAvailability getAvailability(String name) {
+	public static SpellAvailability getAvailability(String name) {
 		return getAvailability(getSpell(name));
 	}
 	
@@ -57,14 +57,14 @@ public final class PrisceMagicaAPI {
 	 * spell isn't mapped to an availability, it returns DISABLED.
 	 * @see SpellAvailability
 	 */
-	public SpellAvailability getAvailability(ISpell spell) {
+	public static SpellAvailability getAvailability(ISpell spell) {
 		return spell != null && availability.containsKey(spell) ? availability.get(spell) : SpellAvailability.DISABLED;
 	}
 	
 	/**
 	 * Internal method, do not call.
 	 */
-	public void configLoad(Configuration config) {
+	public static void configLoad(Configuration config) {
 		
 	}
 	
