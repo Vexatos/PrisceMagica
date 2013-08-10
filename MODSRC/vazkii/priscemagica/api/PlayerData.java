@@ -16,10 +16,14 @@ import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayer;
 
+/**
+ * Internal class. Data for a specific player, you can access
+ * the components of this by using the API.
+ */
 public final class PlayerData implements Serializable {
 	
-	public static List<String> knownSpells = new ArrayList();
-	public static String[] usingSpells = new String[6];
+	private static List<String> knownSpells = new ArrayList();
+	private static String[] usingSpells = new String[6];
 	
 	protected void readFromNBT(EntityPlayer player) {
 		// TODO

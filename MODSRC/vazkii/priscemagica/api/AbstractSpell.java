@@ -19,11 +19,18 @@ import net.minecraft.util.StatCollector;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Abstract implementation of ISpell.
+ */
 public abstract class AbstractSpell implements ISpell {
 
 	private String unlocalizedName;
 	private Icon icon;
 	
+	/**
+	 * Main constructor for AbstractSpell, unlocalizedName is
+	 * the name of the spell. The localized name is spell.unlocalizedName.name
+	 */
 	public AbstractSpell(String unlocalizedName) {
 		this.unlocalizedName = unlocalizedName;
 	}
@@ -44,7 +51,7 @@ public abstract class AbstractSpell implements ISpell {
 	}
 
 	@Override
-	public int getCooldown(ItemStack wand) {
+	public int getCooldown(EntityPlayer player, ItemStack wand) {
 		return 0;
 	}
 

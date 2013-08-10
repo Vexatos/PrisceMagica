@@ -12,6 +12,10 @@ package vazkii.priscemagica.api;
 
 import net.minecraft.entity.player.EntityPlayer;
 
+/**
+ * An enum representing the various possible availabilities
+ * for a spell, set via the config file, used in mapping.
+ */
 public enum SpellAvailability {
 
 	AVAILABLE,
@@ -19,10 +23,16 @@ public enum SpellAvailability {
 	OP_RESTRICTED,
 	DISABLED;
 	
+	/**
+	 * Can the player passed in research this?
+	 */
 	public boolean allowResearch(EntityPlayer plyer) {
 		return false; //TODO
 	}
 	
+	/**
+	 * Can the player passed in use this?
+	 */
 	public boolean allowUsage(EntityPlayer player) {
 		return false; // TODO
 	}

@@ -15,12 +15,18 @@ import java.util.Map;
 
 import net.minecraftforge.common.Configuration;
 
-// TODO Document
+/**
+ * The main API for the PrisceMagica mod. Registry functions
+ * are to be called from here.
+ */
 public final class PrisceMagicaAPI {
 
 	private static Map<String, ISpell> spells = new HashMap();
 	protected static Map<ISpell, SpellAvailability> availability = new HashMap();
 	
+	/**
+	 * Registers a spell, along with the name of the spell to map with.
+	 */
 	public void registerSpell(ISpell spell, String name) {
 		if(spells.containsKey(name))
 			throw new IllegalArgumentException("Name \"" + name + "\" is already taken by " + spells.get(name) + " when adding " + spell + "!");
@@ -28,20 +34,35 @@ public final class PrisceMagicaAPI {
 		spells.put(name, spell);
 	}
 	
+	/**
+	 * Gets a spell from mappings, given the name passed in. If no spell is found mapped
+	 * to this name, it returns null.
+	 */
 	public ISpell getSpell(String name) {
 		return spells.get(name);
 	}
 	
+	/**
+	 * Gets the mapped availability from this spell name. If it fails
+	 * to find a spell with this name, or the spell mapped to this name
+	 * does not have an availability mapping, it returns DISABLED.
+	 * @see SpellAvailability
+	 */
 	public SpellAvailability getAvailability(String name) {
 		return getAvailability(getSpell(name));
 	}
 	
+	/**
+	 * Gets the mapped availability for the spell passed in. If the
+	 * spell isn't mapped to an availability, it returns DISABLED.
+	 * @see SpellAvailability
+	 */
 	public SpellAvailability getAvailability(ISpell spell) {
 		return spell != null && availability.containsKey(spell) ? availability.get(spell) : SpellAvailability.DISABLED;
 	}
 	
 	/**
-	 * Internal method!
+	 * Internal method, do not call.
 	 */
 	public void configLoad(Configuration config) {
 		
