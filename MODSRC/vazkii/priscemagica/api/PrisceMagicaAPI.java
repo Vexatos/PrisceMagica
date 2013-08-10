@@ -13,6 +13,11 @@ package vazkii.priscemagica.api;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.WeakHashMap;
+
+import net.minecraft.entity.player.EntityPlayer;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 /**
  * The main API for the PrisceMagica mod. Registry functions
@@ -22,6 +27,11 @@ public final class PrisceMagicaAPI {
 
 	private static Map<String, ISpell> spells = new HashMap();
 	protected static Map<ISpell, SpellAvailability> availability = new HashMap();
+	
+	private static WeakHashMap<String, PlayerData> playerData = new WeakHashMap();
+	
+	@SideOnly(Side.CLIENT)
+	private static PlayerData clientSidedData;
 	
 	/**
 	 * Registers a spell, along with the name of the spell to map with.<br>
@@ -68,10 +78,31 @@ public final class PrisceMagicaAPI {
 		return spells.keySet();
 	}
 	
+	/**
+	 * Gets the PlayerData instance for the player username passed in.
+	 */
+	public static PlayerData getDataForPlayer(String player) {
+		return playerData.get(player);
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public static PlayerData getClientData() {
+		return clientSidedData;
+	}
+	
 	// INTERNAL METHODS: ========================================================
 	
 	public static void mapAvailability(String spell, SpellAvailability avail) {
 		availability.put(getSpell(spell), avail);
 	}
 	
+	public static void setDataForPlayer(EntityPlayer player, PlayerData data) {
+		playerData.put(player.username, data);
+		data.readFromNBT(player);
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public static void setClientData(PlayerData data) {
+		clientSidedData = data;
+	}
 }

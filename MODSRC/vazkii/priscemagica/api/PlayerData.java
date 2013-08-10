@@ -15,6 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
+import net.minecraft.nbt.NBTTagString;
 
 /**
  * Internal class. Data for a specific player, you can access
@@ -23,13 +26,41 @@ import net.minecraft.entity.player.EntityPlayer;
 public final class PlayerData implements Serializable {
 	
 	private static List<String> knownSpells = new ArrayList();
-	private static String[] usingSpells = new String[6];
+	private static String[] usingSpells = new String[9];
 	
-	protected void readFromNBT(EntityPlayer player) {
-		// TODO
+	public void readFromNBT(EntityPlayer player) {
+		NBTTagCompound cmp = player.getEntityData();
+		if(!cmp.hasKey("PrisceMagica"))
+			return;
+		
+		NBTTagCompound modcmp = cmp.getCompoundTag("PrisceMagica");
+		NBTTagList spellList = cmp.getTagList("KnownSpells");
+		
+		knownSpells.clear();
+		
+		for(int i = 0; i < spellList.tagCount(); i++)
+			knownSpells.add(((NBTTagString) spellList.tagAt(i)).data);
+		
+		for(int i = 0; i < usingSpells.length; i++) {
+			String s = modcmp.getString("Spell" + i);
+			usingSpells[i] = s;
+		}
 	}
 	
-	protected void writeToNBT(EntityPlayer player) {
-		// TODO
+	public void writeToNBT(EntityPlayer player) {
+		NBTTagCompound cmp = player.getEntityData();
+		NBTTagCompound modcmp = new NBTTagCompound();
+		
+		NBTTagList list = new NBTTagList();
+		for(String s : knownSpells)
+			list.appendTag(new NBTTagString("", s));
+		modcmp.setTag("KnownSpells", list);
+		
+		for(int i = 0; i < usingSpells.length; i++) {
+			String s = usingSpells[i];
+			modcmp.setString("Spell" + i, s);
+		}
+		
+		cmp.setCompoundTag("PrisceMagica", modcmp);
 	}	
 }
