@@ -13,6 +13,9 @@ package vazkii.priscemagica.api;
 import java.util.HashMap;
 import java.util.Map;
 
+import net.minecraftforge.common.Configuration;
+
+// TODO Document
 public final class PrisceMagicaAPI {
 
 	private static Map<String, ISpell> spells = new HashMap();
@@ -35,6 +38,13 @@ public final class PrisceMagicaAPI {
 	
 	public SpellAvailability getAvailability(ISpell spell) {
 		return spell != null && availability.containsKey(spell) ? availability.get(spell) : SpellAvailability.DISABLED;
+	}
+	
+	/**
+	 * Internal method!
+	 */
+	public void configLoad(Configuration config) {
+		
 	}
 	
 }
