@@ -16,6 +16,7 @@ import vazkii.priscemagica.core.handler.LocalizationHandler;
 import vazkii.priscemagica.core.proxy.CommonProxy;
 import vazkii.priscemagica.item.ModItems;
 import vazkii.priscemagica.lib.LibMisc;
+import vazkii.priscemagica.spell.ModSpells;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -41,6 +42,7 @@ public class PrisceMagica {
 
 		ConfigHandler.loadConfig(event.getSuggestedConfigurationFile());
 		ModItems.initItems();
+		ModSpells.registerSpells();
 
 		proxy.registerClientHandlers();
 	}

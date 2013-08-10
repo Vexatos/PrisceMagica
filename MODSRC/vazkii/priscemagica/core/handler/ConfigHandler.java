@@ -33,6 +33,10 @@ public final class ConfigHandler {
 
 		config.save();
 	}
+	
+	public static Configuration getConfig() {
+		return config;
+	}
 
 	private static int loadItem(String label, int defaultID) {
 		return config.getItem(label, defaultID).getInt(defaultID);

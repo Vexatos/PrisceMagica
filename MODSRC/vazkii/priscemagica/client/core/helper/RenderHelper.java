@@ -15,12 +15,37 @@ import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.util.Icon;
 
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
+import vazkii.priscemagica.api.ISpell;
+
 public class RenderHelper {
 
+	private static final RenderItem itemRenderer = new RenderItem();
+	
+	public static void renderSpell(int x, int y, ISpell spell) {
+		boolean lightingEnabled = GL11.glGetBoolean(GL11.GL_LIGHTING);
+		
+		if(lightingEnabled)
+			net.minecraft.client.renderer.RenderHelper.disableStandardItemLighting();
+		
+		for(int i = 0; i < spell.getRequiredRenderPasses(); i++)
+			renderIcon(x, y, spell.getIcon(i), spell.getColorForRenderPass(i));
+		
+		if(lightingEnabled)
+			net.minecraft.client.renderer.RenderHelper.enableStandardItemLighting();
+	}
+	
+	public static void renderIcon(int x, int y, Icon icon, int color) {
+		GL11.glColor3ub((byte) ((color >> 16) & 255), (byte) ((color >> 8) & 255), (byte) (color & 255));
+		itemRenderer.renderIcon(x, y, icon, 16, 16);
+		GL11.glColor3f(1F, 1F, 1F);
+	}
+	
 	public static void renderTooltip(int x, int y, List<String> tooltipData) {
 		int color = 0x505000ff;
 		int color2 = 0xf0100010;

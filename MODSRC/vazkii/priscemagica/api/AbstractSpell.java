@@ -25,7 +25,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public abstract class AbstractSpell implements ISpell {
 
 	private String unlocalizedName;
-	private Icon icon;
+	protected Icon icon;
 	
 	/**
 	 * Main constructor for AbstractSpell, unlocalizedName is

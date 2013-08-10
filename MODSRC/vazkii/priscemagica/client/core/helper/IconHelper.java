@@ -14,6 +14,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.util.Icon;
+import vazkii.priscemagica.api.ISpell;
 import vazkii.priscemagica.lib.LibMisc;
 
 public final class IconHelper {
@@ -36,6 +37,10 @@ public final class IconHelper {
 
 	public static Icon forItem(IconRegister ir, Item item, int i) {
 		return forName(ir, item.getUnlocalizedName().replaceAll("item.", "") + i);
+	}
+	
+	public static Icon forSpell(IconRegister ir, ISpell spell) {
+		return forName(ir, "/spells/" + spell.getUnlocalizedName());
 	}
 
 }
