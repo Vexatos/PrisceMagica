@@ -16,6 +16,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.util.Icon;
 
 import org.lwjgl.opengl.GL11;
@@ -28,6 +29,7 @@ public class RenderHelper {
 	private static final RenderItem itemRenderer = new RenderItem();
 	
 	public static void renderSpell(int x, int y, ISpell spell) {
+		Minecraft.getMinecraft().renderEngine.func_110577_a(TextureMap.field_110576_c);
 		boolean lightingEnabled = GL11.glGetBoolean(GL11.GL_LIGHTING);
 		
 		if(lightingEnabled)

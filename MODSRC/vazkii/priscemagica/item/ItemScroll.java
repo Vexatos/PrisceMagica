@@ -10,11 +10,26 @@
  */
 package vazkii.priscemagica.item;
 
+import vazkii.priscemagica.PrisceMagica;
+import vazkii.priscemagica.api.PrisceMagicaAPI;
+import net.minecraft.client.renderer.texture.IconRegister;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 public class ItemScroll extends ItemMod {
 
 	public ItemScroll(int par1) {
 		super(par1);
 		setMaxStackSize(1);
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister par1IconRegister) {
+		super.registerIcons(par1IconRegister);
+		
+		for(String spell : PrisceMagicaAPI.getRegisteredSpells())
+			PrisceMagicaAPI.getSpell(spell).registerIcons(par1IconRegister);
 	}
 
 }

@@ -21,6 +21,8 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
+import vazkii.priscemagica.PrisceMagica;
+import vazkii.priscemagica.api.PrisceMagicaAPI;
 import vazkii.priscemagica.client.core.helper.RenderHelper;
 import vazkii.priscemagica.lib.LibResources;
 
@@ -35,10 +37,6 @@ public class GuiSpellSelection extends GuiScreen {
 	GuiTextField textField;
 
 	static List<String> defValues = new ArrayList();
-	static {
-		for(int i = 0; i < 219; i++)
-			defValues.add("" + i);
-	}
 
 	List<String> values = new ArrayList(); // Currently testing
 	int location = 0;
@@ -46,6 +44,9 @@ public class GuiSpellSelection extends GuiScreen {
 	@Override
 	public void initGui() {
 		super.initGui();
+		defValues.clear();
+		for(String s : PrisceMagicaAPI.getRegisteredSpells())
+			defValues.add(s);
 
 		int k = (width - xSize) / 2;
 		int l = (height - ySize) / 2;
@@ -160,5 +161,6 @@ public class GuiSpellSelection extends GuiScreen {
 
 		mc.func_110434_K().func_110577_a(guiTex);
 		drawTexturedModalRect(xd, yd, 176, 0, 18, 18);
+		RenderHelper.renderSpell(xd + 1, yd + 1, PrisceMagicaAPI.getSpell(values.get(loc)));
 	}
 }

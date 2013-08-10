@@ -12,6 +12,7 @@ package vazkii.priscemagica.api;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import net.minecraftforge.common.Configuration;
 
@@ -59,6 +60,13 @@ public final class PrisceMagicaAPI {
 	 */
 	public static SpellAvailability getAvailability(ISpell spell) {
 		return spell != null && availability.containsKey(spell) ? availability.get(spell) : SpellAvailability.DISABLED;
+	}
+	
+	/**
+	 * Returns a Set with the names of all registered spells.
+	 */
+	public static Set<String> getRegisteredSpells() {
+		return spells.keySet();
 	}
 	
 	/**
