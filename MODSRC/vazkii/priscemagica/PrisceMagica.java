@@ -53,5 +53,7 @@ public class PrisceMagica {
 
 		proxy.registerTileEntities();
 		NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
+		
+		ConfigHandler.loadSpellConfig();
 	}
 }

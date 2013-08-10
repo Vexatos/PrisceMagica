@@ -33,7 +33,13 @@ public interface ISpell {
 	 * Gets the unlocalized (mapping) name for the spell.
 	 */
 	public String getUnlocalizedName();
-
+	
+	/**
+	 * Gets the description of thi spell. Used in the spell selection
+	 * interface to tell the player what the spell does.
+	 */
+	public String getDescription();
+	
 	/**
 	 * Should return true if the research data passed in should
 	 * take this spell in consideration when creating a list

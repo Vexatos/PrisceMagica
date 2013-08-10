@@ -14,8 +14,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import net.minecraftforge.common.Configuration;
-
 /**
  * The main API for the PrisceMagica mod. Registry functions
  * are to be called from here.
@@ -26,7 +24,8 @@ public final class PrisceMagicaAPI {
 	protected static Map<ISpell, SpellAvailability> availability = new HashMap();
 	
 	/**
-	 * Registers a spell, along with the name of the spell to map with.
+	 * Registers a spell, along with the name of the spell to map with.<br>
+	 * Call this during PreInit or bad stuff will happen.
 	 */
 	public static void registerSpell(ISpell spell, String name) {
 		if(spells.containsKey(name))
@@ -69,11 +68,10 @@ public final class PrisceMagicaAPI {
 		return spells.keySet();
 	}
 	
-	/**
-	 * Internal method, do not call.
-	 */
-	public static void configLoad(Configuration config) {
-		
+	// INTERNAL METHODS: ========================================================
+	
+	public static void mapAvailability(String spell, SpellAvailability avail) {
+		availability.put(getSpell(spell), avail);
 	}
 	
 }

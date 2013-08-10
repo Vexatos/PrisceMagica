@@ -4,4 +4,10 @@ item.scroll.name=Spell Scroll
 
 tile.spellDesk.name=Sorcery Table
 
+spell.fireball.name=Fireball
+spell.icebolt.name=Icebolt
+
+spell.fireball.desc=The caster launches a fast moving flaming projectile. Upon hitting an enemy, it deals a moderate amount of damage and sets them on fire.
+spell.icebolt.desc=The caster launches a slow moving cold projectile. Upon hitting an enemy, it freezes them, preventing movement for a short amount of time.
+
 itemGroup.PrisceMagica=PrisceMagica

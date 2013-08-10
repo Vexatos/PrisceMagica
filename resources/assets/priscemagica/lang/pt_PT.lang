@@ -4,4 +4,10 @@ item.scroll.name=Pregaminho Magico
 
 tile.spellDesk.name=Mesa de Feiticeiria
 
+spell.fireball.name=Bola de Fogo
+spell.icebolt.name=Seta de Gelo
+
+spell.fireball.desc=O mago lança um projectil incandescente. Ao acertar num inimigo, ataca para dano medio e incendeia o alvo.
+spell.icebolt.desc=O mago lança um projectil gélido. Ao acertar num inimigo, congela-o, prevenindo movimento por uma quantidade baixa de tempo.
+
 itemGroup.PrisceMagica=PrisceMagica

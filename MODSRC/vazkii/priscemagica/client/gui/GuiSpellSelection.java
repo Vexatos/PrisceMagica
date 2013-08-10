@@ -22,6 +22,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 import vazkii.priscemagica.PrisceMagica;
+import vazkii.priscemagica.api.ISpell;
 import vazkii.priscemagica.api.PrisceMagicaAPI;
 import vazkii.priscemagica.client.core.helper.RenderHelper;
 import vazkii.priscemagica.lib.LibResources;
@@ -132,35 +133,38 @@ public class GuiSpellSelection extends GuiScreen {
 			GL11.glScalef(size / 3, size / 3, 1F);
 			mc.func_110434_K().func_110577_a(resourceMap);
 			drawTexturedModalRect(0, 0, 0, 0, 256, 256);
-			//boolean unicode = fontRenderer.getUnicodeFlag();
 			GL11.glScalef(1.5F, 1.5F, 2F);
-			//fontRenderer.setUnicodeFlag(true); // TODO placeholder
-			String s = "the quick brown fox jumped over the lazy dog because he had nothing better to do and then a bad wolf came and ate some pigs, so the fox was sad because he liked the pigs so the lazy dog started shouting and the bad wolf ran away and the quick fox ran behind him trying to catch him to avenge the pigs but he got tired and fell in the way. the end";
+			String s = spell.getDescription();
 			fontRenderer.drawSplitString(s, 8, 8, 164, 0);
-			//fontRenderer.setUnicodeFlag(unicode);
 			GL11.glPopMatrix();
 		}
 
 		text = "";
+		spell = null;
 	}
 
 	boolean isHovering = false;
 	float size = 0F;
 	String text = "";
+	ISpell spell = null;
 
 	public void drawEntry(int xs, int ys, int x, int y, int loc, int mx, int yx) {
 		if(loc >= values.size())
 			return;
 
+		String name = values.get(loc);
+		ISpell spell = PrisceMagicaAPI.getSpell(name);
+		
 		int xd = xs + 58 + x * 18;
 		int yd = ys + 24 + y * 19;
 		if(mx >= xd && mx < xd + 18 && yx >= yd && yx < yd + 18) {
-			text = values.get(loc);
+			this.spell = spell;
+			text = spell.getLocalizedName();
 			isHovering = true;
 		}
 
 		mc.func_110434_K().func_110577_a(guiTex);
 		drawTexturedModalRect(xd, yd, 176, 0, 18, 18);
-		RenderHelper.renderSpell(xd + 1, yd + 1, PrisceMagicaAPI.getSpell(values.get(loc)));
+		RenderHelper.renderSpell(xd + 1, yd + 1, spell);
 	}
 }

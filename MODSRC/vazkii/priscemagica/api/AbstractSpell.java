@@ -41,6 +41,11 @@ public abstract class AbstractSpell implements ISpell {
 	}
 
 	@Override
+	public String getDescription() {
+		return StatCollector.translateToLocal("spell." + getUnlocalizedName() + ".desc");
+	}
+	
+	@Override
 	public String getUnlocalizedName() {
 		return unlocalizedName;
 	}
