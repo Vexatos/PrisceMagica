@@ -25,8 +25,10 @@ import net.minecraft.nbt.NBTTagString;
  */
 public final class PlayerData implements Serializable {
 	
-	private static List<String> knownSpells = new ArrayList();
-	private static String[] usingSpells = new String[9];
+	private List<String> knownSpells = new ArrayList();
+	private String[] usingSpells = new String[9];
+	
+	private int selectedSpell = 0;
 	
 	public void readFromNBT(EntityPlayer player) {
 		NBTTagCompound cmp = player.getEntityData();
@@ -45,6 +47,8 @@ public final class PlayerData implements Serializable {
 			String s = modcmp.getString("Spell" + i);
 			usingSpells[i] = s;
 		}
+		
+		selectedSpell = modcmp.getInteger("Selected");
 	}
 	
 	public void writeToNBT(EntityPlayer player) {
@@ -60,6 +64,8 @@ public final class PlayerData implements Serializable {
 			String s = usingSpells[i];
 			modcmp.setString("Spell" + i, s);
 		}
+		
+		modcmp.setInteger("Selected", selectedSpell);
 		
 		cmp.setCompoundTag("PrisceMagica", modcmp);
 	}	
